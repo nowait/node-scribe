@@ -57,7 +57,7 @@ test("can figure out caller line", function(done) {
   req.log.log("test");
 
   assert.equal(buf, "test");
-  assert.equal(line, "Test.fn (/Users/juhomakinen/Development/node-scribe/test/requestlog.test.js:57:11)");
+  assert(line.endsWith("/node-scribe/test/requestlog.test.js:57:11)"));
 
   done();
 });
@@ -106,4 +106,3 @@ test("can has unique id", function(done) {
 
   done();
 });
-
